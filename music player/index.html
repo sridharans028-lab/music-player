@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JK</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="backgroundGlow"></div>
+
+<div class="player">
+
+    <h1 class="logo">JK</h1>
+
+    <div class="coverContainer">
+
+        <img id="cover"
+            src="images/cover1.jpg"
+            alt="Album Cover">
+
+        <div class="coverGlow"></div>
+
+    </div>
+
+    <div class="cassette">
+
+        <div class="led" id="led"></div>
+
+        <div class="label">
+
+            <h2 id="title">Song 1</h2>
+
+        </div>
+
+        <div class="window">
+
+            <div class="reel left">
+
+                <div class="center"></div>
+
+            </div>
+
+            <div class="tape"></div>
+
+            <div class="reel right">
+
+                <div class="center"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <audio id="audio"></audio>
+
+    <div class="time">
+
+        <span id="current">0:00</span>
+
+        <span id="duration">0:00</span>
+
+    </div>
+
+    <input
+        type="range"
+        id="progress"
+        value="0">
+
+    <div class="buttons">
+
+        <button onclick="prevSong()">
+
+            <i class="fa-solid fa-backward-step"></i>
+
+        </button>
+
+        <button
+            class="play"
+            id="playBtn"
+            onclick="playPause()">
+
+            <i class="fa-solid fa-play"></i>
+
+        </button>
+
+        <button onclick="nextSong()">
+
+            <i class="fa-solid fa-forward-step"></i>
+
+        </button>
+
+    </div>
+
+    <div class="volumeBox">
+
+    <button id="muteBtn">
+        <i class="fa-solid fa-volume-high"></i>
+    </button>
+
+    <input
+        type="range"
+        id="volume"
+        min="0"
+        max="1"
+        step="0.01"
+        value="1">
+
+</div>
+
+    <div class="equalizer">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

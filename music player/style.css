@@ -1,0 +1,526 @@
+/* ------------------------------
+   Google Fonts
+--------------------------------*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:#090909;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+}
+
+/* Background Glow */
+
+.backgroundGlow{
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    background:radial-gradient(circle,
+    rgba(255,80,0,.18),
+    transparent 70%);
+
+    filter:blur(40px);
+
+}
+
+/* Player */
+
+.player{
+
+    position:relative;
+
+    width:430px;
+
+    background:#151515;
+
+    border:1px solid #303030;
+
+    border-radius:25px;
+
+    padding:30px;
+
+    box-shadow:
+    0 0 30px rgba(255,80,0,.15),
+    0 0 60px rgba(0,0,0,.8);
+
+    z-index:2;
+
+}
+
+/* Logo */
+
+.logo{
+
+    font-family:'Orbitron',sans-serif;
+
+    color:white;
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    letter-spacing:4px;
+
+}
+
+/* Album Cover */
+
+.coverContainer{
+
+    display:flex;
+    justify-content:center;
+
+    position:relative;
+
+    margin-bottom:30px;
+
+}
+
+#cover{
+
+    width:170px;
+    height:170px;
+
+    border-radius:12px;
+
+    object-fit:cover;
+
+    box-shadow:
+    0 0 20px rgba(255,90,0,.4);
+
+    transition:.4s;
+
+}
+
+.coverGlow{
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    background:rgba(255,80,0,.15);
+
+    filter:blur(35px);
+
+    z-index:-1;
+
+}
+
+/* Cassette */
+
+.cassette{
+
+    background:#222;
+
+    border-radius:18px;
+
+    padding:18px;
+
+    border:3px solid #444;
+
+    position:relative;
+
+}
+
+/* LED */
+
+.led{
+
+    position:absolute;
+
+    right:20px;
+    top:18px;
+
+    width:12px;
+    height:12px;
+
+    background:#400;
+
+    border-radius:50%;
+
+    transition:.3s;
+
+}
+
+.led.active{
+
+    background:#ff4500;
+
+    box-shadow:
+    0 0 8px #ff4500,
+    0 0 15px #ff4500;
+
+}
+
+/* Label */
+
+.label{
+
+    text-align:center;
+
+    color:white;
+
+    margin-bottom:20px;
+
+}
+
+.label h2{
+
+    font-weight:500;
+
+}
+
+/* Window */
+
+.window{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+/* Tape */
+
+.tape{
+
+    flex:1;
+
+    height:5px;
+
+    background:#888;
+
+    margin:0 15px;
+
+}
+
+/* Reels */
+
+.reel{
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    border:6px solid #666;
+
+    background:#111;
+
+    position:relative;
+
+}
+
+.center{
+
+    position:absolute;
+
+    width:18px;
+    height:18px;
+
+    background:white;
+
+    border-radius:50%;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+}
+
+/* Reel Animation */
+
+.spin{
+
+    animation:spin 2s linear infinite;
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* Time */
+
+.time{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    color:#999;
+
+    margin-top:20px;
+
+}
+
+/* Slider */
+
+input[type=range]{
+
+    width:100%;
+
+    margin-top:12px;
+
+    accent-color:#ff4500;
+
+}
+
+/* Buttons */
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin-top:25px;
+
+}
+
+.buttons button{
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:#242424;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:20px;
+
+}
+
+.buttons button:hover{
+
+    transform:translateY(-5px);
+
+    background:#ff4500;
+
+    box-shadow:0 0 15px #ff4500;
+
+}
+
+.play{
+
+    width:75px!important;
+    height:75px!important;
+
+    background:#ff4500!important;
+
+    box-shadow:0 0 20px #ff4500;
+
+}
+
+/* Volume */
+
+.volumeBox{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:white;
+
+    margin-top:30px;
+
+}
+
+/* Equalizer */
+
+.equalizer{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:6px;
+
+    margin-top:30px;
+
+}
+
+.equalizer span{
+
+    width:6px;
+
+    height:20px;
+
+    background:#ff4500;
+
+    border-radius:10px;
+
+    animation:bars .8s infinite alternate;
+
+}
+
+.equalizer span:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.equalizer span:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+.equalizer span:nth-child(4){
+
+    animation-delay:.1s;
+
+}
+
+.equalizer span:nth-child(5){
+
+    animation-delay:.5s;
+
+}
+
+@keyframes bars{
+
+    from{
+
+        height:12px;
+
+    }
+
+    to{
+
+        height:35px;
+
+    }
+
+}
+
+/* Responsive */
+
+@media(max-width:500px){
+
+.player{
+
+    width:95%;
+
+}
+
+#cover{
+
+    width:150px;
+    height:150px;
+
+}
+
+.reel{
+
+    width:70px;
+    height:70px;
+
+}
+
+}
+#cover{
+    transition:0.4s;
+    transform-origin:center;
+}
+
+.spinCover{
+    animation:coverSpin 12s linear infinite;
+}
+
+@keyframes coverSpin{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+.volumeBox{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-top:25px;
+}
+
+#muteBtn{
+
+    width:45px;
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#242424;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:18px;
+
+}
+
+#muteBtn:hover{
+
+    background:#ff4500;
+
+    box-shadow:0 0 15px #ff4500;
+
+}
+
+#volume{
+
+    flex:1;
+
+    accent-color:#ff4500;
+
+    cursor:pointer;
+
+}
